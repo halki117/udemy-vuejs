@@ -1,5 +1,7 @@
 <template>
-  <p>トータルのいいね数</p>
+  <div>
+    <slot></slot>
+  </div>
 </template>
 
 // <script>
