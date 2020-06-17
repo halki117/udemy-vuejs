@@ -8,11 +8,14 @@
 <script>
 export default {
   props: {
-    totalNumber: Number
+    totalNumber: {
+      type: Number,
+      default: 10
+    },
   },
   methods: {
     increment: function() {
-      this.number += 1;
+      this.$emit("my-click", this.totalNumber + 1);
     }
   },
   computed: {
