@@ -27,6 +27,16 @@
              v-model.trim="eventData.host"
       >
       <p>{{ eventData.host }}</p>
+      <input 
+        type="checkbox"
+        id="isPrivate"
+        v-model="eventData.isPrivate"
+      >
+      <label for="isPrivate">非公開</label>
+      <p>{{ eventData.isPrivate }}</p>
+
+      <p>参加条件</p>
+      <input type="checkbox" id="10" value="10代" v-model="eventData.target">
     </div>
   </div>
 </template>
@@ -41,7 +51,8 @@
         eventData: {
           title: "タイトル",
           maxNuber: 0,
-          host: ""
+          host: "",
+          isPrivate: false,
         }
       };
     },
