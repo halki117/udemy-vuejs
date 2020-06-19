@@ -7,7 +7,7 @@
     <LikeNumber :totalNumber="number" v-on:my-click="incrementNumber"></LikeNumber>
     <LikeNumber :total-number="number"></LikeNumber>
     <test></test>
-    <div>
+    <div style="padding: 10rem;">
       <h2>イベントのフォーム</h2>
       <label for="title">タイトル</label>
       <input id="title"
@@ -52,6 +52,15 @@
         v-model="eventData.price"
       >
       <label for="有料">有料</label>
+
+      <p>開催場所</p>
+      <select v-model="eventData.location">
+        <option 
+          v-for="location in locations" 
+          :key="location"
+          >{{ location }}</option>
+      </select>
+      <p>{{ eventData.location }}</p>
     </div>
   </div>
 </template>
@@ -63,12 +72,14 @@
     data: function() {
       return {
         number: 10,
+        locations: ["東京","大阪","名古屋"],
         eventData: {
           title: "タイトル",
           maxNuber: 0,
           host: "",
           isPrivate: false,
-          price: "無料"
+          price: "無料",
+          location: "東京",
         }
       };
     },
