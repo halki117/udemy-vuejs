@@ -7,11 +7,11 @@ Vue.config.productionTip = false;
 Vue.component("LikeNumber", LikeNumber);
 Vue.component("test", test)
 Vue.directive("border", {
-  bind() {},
-  inserted() {},
-  update() {},
-  componentUpdate() {},
-  unbind() {},
+  bind(el, binding, vnode) {},
+  inserted(el, binding, vnode) {},
+  update(el, binding, vnode, oldVnode) {},
+  componentUpdate(el, binding, vnode, oldVnode) {},
+  unbind(el, binding, vnode) {},
 });
 
 
