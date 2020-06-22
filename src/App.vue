@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Home></Home>
     <LikeHeader header-text="hello">
       <h1>トータルのいいね数</h1>
       <h2>{{ number }}</h2>
@@ -62,6 +63,7 @@
 
 <script>
   import LikeHeader from './components/LikeHeader.vue';
+  import Home from './components/Home.vue'
 
   export default {
     data: function() {
@@ -80,6 +82,7 @@
     },
     components: {
       LikeHeader,
+      Home,
     },
     methods: {
       incrementNumber: function(value) {

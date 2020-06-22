@@ -6,12 +6,9 @@ import test from './components/test.vue'
 Vue.config.productionTip = false;
 Vue.component("LikeNumber", LikeNumber);
 Vue.component("test", test)
-Vue.directive("border", {
-  bind(el, binding, vnode) {},
-  inserted(el, binding, vnode) {},
-  update(el, binding, vnode, oldVnode) {},
-  componentUpdate(el, binding, vnode, oldVnode) {},
-  unbind(el, binding, vnode) {},
+Vue.directive("border", function(el, binding) {
+  el.style.border = "solid black 2px";
+  el.style.borderWidth = binding.value
 });
 
 
