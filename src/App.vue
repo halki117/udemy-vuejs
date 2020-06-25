@@ -1,5 +1,21 @@
 <template>
   <div>
+    <h3>掲示板に投稿する</h3>
+    <label for ="name">ニックネーム:</label>
+    <input
+      id = "name"
+      type = "text"
+      v-model ="name"
+    >
+    <br><br>
+    <label for ="comment">コメント:</label>
+    <textarea 
+      id ="comment"
+      v-model ="comment"></textarea>
+      <br>
+      <button @click="createComment">コメントする</button>
+    <h2>掲示板</h2>
+
     <Home></Home>
     <LikeHeader header-text="hello">
       <h1>トータルのいいね数</h1>
@@ -63,8 +79,8 @@
 
 <script>
   import LikeHeader from './components/LikeHeader.vue';
-  import Home from './components/Home.vue'
-
+  import Home from './components/Home.vue';
+  import axios from 'axios';
   export default {
     data: function() {
       return {
@@ -77,6 +93,8 @@
           isPrivate: false,
           price: "無料",
           location: [],
+          name: "",
+          comment: "",
         }
       };
     },
@@ -88,6 +106,9 @@
       incrementNumber: function(value) {
         return this.number = value;
       },
+      createComment() {
+        axios.post();
+      }
     },
   }
 </script>
