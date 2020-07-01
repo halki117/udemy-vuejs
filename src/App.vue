@@ -85,7 +85,7 @@
     data: function() {
       return {
         number: 10,
-        locations: ["東京","大阪","名古屋"],
+        locations: ["東京","大阪","名古屋","東京"],
         eventData: {
           title: "タイトル",
           maxNuber: 0,
